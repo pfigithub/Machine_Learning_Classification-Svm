@@ -78,3 +78,10 @@ print (classification_report(y_test, yhat))
 # Plot non-normalized confusion matrix
 plt.figure()
 plot_confusion_matrix(cnf_matrix, classes=['Benign(2)','Malignant(4)'],normalize= False,  title='Confusion matrix')
+
+# evaluation
+from sklearn.metrics import f1_score
+f1_score(y_test, yhat, average='weighted') 
+
+from sklearn.metrics import jaccard_score
+jaccard_score(y_test, yhat,pos_label=2)
